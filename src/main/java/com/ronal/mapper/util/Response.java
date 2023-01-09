@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 public class Response <T> {
+    private boolean success;
     private String mensaje;
     private String error;
     private T response;
