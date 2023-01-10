@@ -22,4 +22,10 @@ public class PersonaDAO implements Serializable {
     @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "apellido")
+    private String apellido;
+
+    @Column(name = "direccion")
+    private String direccion;
+
 }

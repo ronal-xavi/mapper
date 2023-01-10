@@ -4,8 +4,8 @@ import com.ronal.mapper.dao.PersonaDAO;
 import com.ronal.mapper.dto.PersonaDTO;
 import com.ronal.mapper.repository.PersonaRepository;
 import com.ronal.mapper.service.PersonaService;
-import com.ronal.mapper.util.Response;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ronal.mapper.util.ResponseDTO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,21 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
+@RequiredArgsConstructor
 @RestController
 public class PersonaController {
-    @Autowired
-    private PersonaService personaService;
+    private final PersonaService personaService;
 
-    @Autowired
-    private PersonaRepository personaRepository;
+    private final PersonaRepository personaRepository;
 
     @PostMapping("registrar")
-    public Response<PersonaDTO> guardar (@RequestBody @Validated PersonaDTO personaDTO){
+    public ResponseDTO<PersonaDTO> guardar (@RequestBody @Validated PersonaDTO personaDTO){
         return personaService.registrar(personaDTO);
     }
 
     @GetMapping
-    public List<PersonaDAO> listar(){
+    public  List<PersonaDAO> listar(){
         return personaRepository.findAll();
     }
+
 }

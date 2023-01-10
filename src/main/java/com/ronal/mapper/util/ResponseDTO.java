@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class Response <T> {
+public class ResponseDTO<T> {
     private boolean success;
     private String mensaje;
     private String error;

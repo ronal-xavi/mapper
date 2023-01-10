@@ -1,12 +1,13 @@
 package com.ronal.mapper.mapper;
 
 import com.ronal.mapper.dao.PersonaDAO;
+import com.ronal.mapper.dto.PersonaDTO;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface PersonaMapper {
 
-    PersonaDAO personaDtoToPersonaDao(com.ronal.mapper.dto.PersonaDTO personaDTO);
+    PersonaDAO personaDtoToPersonaDao(PersonaDTO personaDTO);
 
-    com.ronal.mapper.dto.PersonaDTO personaDaoToPersonaDto(PersonaDAO personaDAO);
+    PersonaDTO personaDaoToPersonaDto(PersonaDAO personaDAO);
 }
